@@ -1,0 +1,82 @@
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.16.40.164:3000
+- Environments: .env
+✓ Ready in 341ms
+
+○ Compiling / ...
+ GET / 200 in 6.0s (next.js: 5.6s, application-code: 405ms)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "172.16.40.164".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['172.16.40.164'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET / 200 in 90ms (next.js: 22ms, application-code: 68ms)
+ GET / 200 in 117ms (next.js: 51ms, application-code: 66ms)
+ GET / 200 in 106ms (next.js: 8ms, application-code: 98ms)
+ GET / 200 in 105ms (next.js: 39ms, application-code: 66ms)
+ GET / 200 in 133ms (next.js: 49ms, application-code: 84ms)
+ GET / 200 in 96ms (next.js: 12ms, application-code: 83ms)
+ GET / 200 in 92ms (next.js: 15ms, application-code: 77ms)
+ GET / 200 in 112ms (next.js: 47ms, application-code: 65ms)
+ GET / 200 in 102ms (next.js: 19ms, application-code: 84ms)
+ GET / 200 in 101ms (next.js: 41ms, application-code: 61ms)
+ GET / 200 in 83ms (next.js: 11ms, application-code: 72ms)
+ GET / 200 in 56ms (next.js: 7ms, application-code: 49ms)
+prisma:query SELECT `main`.`Showcase`.`id`, `main`.`Showcase`.`umkmId`, `main`.`Showcase`.`headline`, `main`.`Showcase`.`beforeStory`, `main`.`Showcase`.`afterStory`, `main`.`Showcase`.`achievements`, `main`.`Showcase`.`image`, `main`.`Showcase`.`publishedAt` FROM `main`.`Showcase` WHERE 1=1 ORDER BY `main`.`Showcase`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`id` IN (?,?,?,?,?) LIMIT ? OFFSET ?
+ GET /api/showcase 200 in 1220ms (next.js: 1126ms, application-code: 94ms)
+ GET / 200 in 65ms (next.js: 13ms, application-code: 51ms)
+prisma:query SELECT `main`.`Showcase`.`id`, `main`.`Showcase`.`umkmId`, `main`.`Showcase`.`headline`, `main`.`Showcase`.`beforeStory`, `main`.`Showcase`.`afterStory`, `main`.`Showcase`.`achievements`, `main`.`Showcase`.`image`, `main`.`Showcase`.`publishedAt` FROM `main`.`Showcase` WHERE 1=1 ORDER BY `main`.`Showcase`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`id` IN (?,?,?,?,?) LIMIT ? OFFSET ?
+ GET /api/showcase 200 in 20ms (next.js: 3ms, application-code: 17ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`role`, `main`.`User`.`avatar`, `main`.`User`.`createdAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`ownerId` IN (?) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 220ms (next.js: 212ms, application-code: 8ms)
+prisma:query SELECT `main`.`Module`.`id`, `main`.`Module`.`order`, `main`.`Module`.`title`, `main`.`Module`.`subtitle`, `main`.`Module`.`description`, `main`.`Module`.`icon`, `main`.`Module`.`duration`, `main`.`Module`.`level`, `main`.`Module`.`createdAt` FROM `main`.`Module` WHERE 1=1 ORDER BY `main`.`Module`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Lesson`.`id`, `main`.`Lesson`.`moduleId`, `main`.`Lesson`.`order`, `main`.`Lesson`.`title`, `main`.`Lesson`.`type`, `main`.`Lesson`.`content`, `main`.`Lesson`.`duration` FROM `main`.`Lesson` WHERE `main`.`Lesson`.`moduleId` IN (?,?,?,?,?) ORDER BY `main`.`Lesson`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Prompt`.`id`, `main`.`Prompt`.`title`, `main`.`Prompt`.`category`, `main`.`Prompt`.`purpose`, `main`.`Prompt`.`body`, `main`.`Prompt`.`tips`, `main`.`Prompt`.`difficulty`, `main`.`Prompt`.`createdAt` FROM `main`.`Prompt` WHERE 1=1 ORDER BY `main`.`Prompt`.`createdAt` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`FavoritePrompt`.`id`, `main`.`FavoritePrompt`.`userId`, `main`.`FavoritePrompt`.`promptId`, `main`.`FavoritePrompt`.`createdAt` FROM `main`.`FavoritePrompt` WHERE (`main`.`FavoritePrompt`.`userId` = ? AND `main`.`FavoritePrompt`.`promptId` IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Challenge`.`id`, `main`.`Challenge`.`week`, `main`.`Challenge`.`title`, `main`.`Challenge`.`description`, `main`.`Challenge`.`instructions`, `main`.`Challenge`.`moduleId`, `main`.`Challenge`.`deadline`, `main`.`Challenge`.`createdAt` FROM `main`.`Challenge` WHERE 1=1 ORDER BY `main`.`Challenge`.`week` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`ChallengeSubmission`.`id`, `main`.`ChallengeSubmission`.`challengeId`, `main`.`ChallengeSubmission`.`umkmId`, `main`.`ChallengeSubmission`.`status`, `main`.`ChallengeSubmission`.`content`, `main`.`ChallengeSubmission`.`feedback`, `main`.`ChallengeSubmission`.`mentorId`, `main`.`ChallengeSubmission`.`updatedAt`, `main`.`ChallengeSubmission`.`createdAt` FROM `main`.`ChallengeSubmission` WHERE (`main`.`ChallengeSubmission`.`umkmId` = ? AND `main`.`ChallengeSubmission`.`challengeId` IN (?,?,?,?,?)) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`id` IN (?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Module`.`id`, `main`.`Module`.`order`, `main`.`Module`.`title`, `main`.`Module`.`subtitle`, `main`.`Module`.`description`, `main`.`Module`.`icon`, `main`.`Module`.`duration`, `main`.`Module`.`level`, `main`.`Module`.`createdAt` FROM `main`.`Module` WHERE `main`.`Module`.`id` IN (?,?,?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Notification`.`id`, `main`.`Notification`.`userId`, `main`.`Notification`.`title`, `main`.`Notification`.`message`, `main`.`Notification`.`type`, `main`.`Notification`.`read`, `main`.`Notification`.`createdAt` FROM `main`.`Notification` WHERE `main`.`Notification`.`userId` = ? ORDER BY `main`.`Notification`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Progress`.`id`, `main`.`Progress`.`umkmId`, `main`.`Progress`.`lessonId`, `main`.`Progress`.`completed`, `main`.`Progress`.`completedAt`, `main`.`Progress`.`createdAt` FROM `main`.`Progress` WHERE `main`.`Progress`.`umkmId` = ? LIMIT ? OFFSET ?
+ GET /api/prompts?userId=cmrlkowdy0002dd52syelpfih&fav=1 200 in 304ms (next.js: 254ms, application-code: 49ms)
+ GET /api/challenges?umkmId=cmrlkowdz0005dd52cim0iguw 200 in 307ms (next.js: 273ms, application-code: 35ms)
+ GET /api/notifications?userId=cmrlkowdy0002dd52syelpfih 200 in 314ms (next.js: 300ms, application-code: 14ms)
+ GET /api/modules?umkmId=cmrlkowdz0005dd52cim0iguw 200 in 315ms (next.js: 243ms, application-code: 72ms)
+prisma:query SELECT `main`.`Notification`.`id`, `main`.`Notification`.`userId`, `main`.`Notification`.`title`, `main`.`Notification`.`message`, `main`.`Notification`.`type`, `main`.`Notification`.`read`, `main`.`Notification`.`createdAt` FROM `main`.`Notification` WHERE `main`.`Notification`.`userId` = ? ORDER BY `main`.`Notification`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/notifications?userId=cmrlkowdy0002dd52syelpfih 200 in 17ms (next.js: 3ms, application-code: 15ms)
+ GET /api/showcase 200 in 20ms (next.js: 7ms, application-code: 12ms)
+prisma:query SELECT `main`.`Showcase`.`id`, `main`.`Showcase`.`umkmId`, `main`.`Showcase`.`headline`, `main`.`Showcase`.`beforeStory`, `main`.`Showcase`.`afterStory`, `main`.`Showcase`.`achievements`, `main`.`Showcase`.`image`, `main`.`Showcase`.`publishedAt` FROM `main`.`Showcase` WHERE 1=1 ORDER BY `main`.`Showcase`.`publishedAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`id` IN (?,?,?,?,?) LIMIT ? OFFSET ?
+ GET /api/notifications?userId=cmrlkowdy0002dd52syelpfih 200 in 36ms (next.js: 14ms, application-code: 22ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Notification`.`id`, `main`.`Notification`.`userId`, `main`.`Notification`.`title`, `main`.`Notification`.`message`, `main`.`Notification`.`type`, `main`.`Notification`.`read`, `main`.`Notification`.`createdAt` FROM `main`.`Notification` WHERE `main`.`Notification`.`userId` = ? ORDER BY `main`.`Notification`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Module`.`id`, `main`.`Module`.`order`, `main`.`Module`.`title`, `main`.`Module`.`subtitle`, `main`.`Module`.`description`, `main`.`Module`.`icon`, `main`.`Module`.`duration`, `main`.`Module`.`level`, `main`.`Module`.`createdAt` FROM `main`.`Module` WHERE 1=1 ORDER BY `main`.`Module`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Lesson`.`id`, `main`.`Lesson`.`moduleId`, `main`.`Lesson`.`order`, `main`.`Lesson`.`title`, `main`.`Lesson`.`type`, `main`.`Lesson`.`content`, `main`.`Lesson`.`duration` FROM `main`.`Lesson` WHERE `main`.`Lesson`.`moduleId` IN (?,?,?,?,?) ORDER BY `main`.`Lesson`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Progress`.`id`, `main`.`Progress`.`umkmId`, `main`.`Progress`.`lessonId`, `main`.`Progress`.`completed`, `main`.`Progress`.`completedAt`, `main`.`Progress`.`createdAt` FROM `main`.`Progress` WHERE `main`.`Progress`.`umkmId` = ? LIMIT ? OFFSET ?
+ GET /api/modules?umkmId=cmrlkowdz0005dd52cim0iguw 200 in 36ms (next.js: 23ms, application-code: 14ms)
+prisma:query SELECT `main`.`Notification`.`id`, `main`.`Notification`.`userId`, `main`.`Notification`.`title`, `main`.`Notification`.`message`, `main`.`Notification`.`type`, `main`.`Notification`.`read`, `main`.`Notification`.`createdAt` FROM `main`.`Notification` WHERE `main`.`Notification`.`userId` = ? ORDER BY `main`.`Notification`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/notifications?userId=cmrlkowdy0002dd52syelpfih 200 in 23ms (next.js: 11ms, application-code: 12ms)
+prisma:query SELECT `main`.`Module`.`id`, `main`.`Module`.`order`, `main`.`Module`.`title`, `main`.`Module`.`subtitle`, `main`.`Module`.`description`, `main`.`Module`.`icon`, `main`.`Module`.`duration`, `main`.`Module`.`level`, `main`.`Module`.`createdAt` FROM `main`.`Module` WHERE 1=1 ORDER BY `main`.`Module`.`order` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Lesson`.`id`, `main`.`Lesson`.`moduleId`, `main`.`Lesson`.`order`, `main`.`Lesson`.`title`, `main`.`Lesson`.`type`, `main`.`Lesson`.`content`, `main`.`Lesson`.`duration` FROM `main`.`Lesson` WHERE `main`.`Lesson`.`moduleId` IN (?,?,?,?,?) ORDER BY `main`.`Lesson`.`order` ASC LIMIT ? OFFSET ?
+ GET /api/modules?umkmId=cmrlkowdz0005dd52cim0iguw 200 in 30ms (next.js: 13ms, application-code: 17ms)
+prisma:query SELECT `main`.`Progress`.`id`, `main`.`Progress`.`umkmId`, `main`.`Progress`.`lessonId`, `main`.`Progress`.`completed`, `main`.`Progress`.`completedAt`, `main`.`Progress`.`createdAt` FROM `main`.`Progress` WHERE `main`.`Progress`.`umkmId` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Challenge`.`id`, `main`.`Challenge`.`week`, `main`.`Challenge`.`title`, `main`.`Challenge`.`description`, `main`.`Challenge`.`instructions`, `main`.`Challenge`.`moduleId`, `main`.`Challenge`.`deadline`, `main`.`Challenge`.`createdAt` FROM `main`.`Challenge` WHERE 1=1 ORDER BY `main`.`Challenge`.`week` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`ChallengeSubmission`.`id`, `main`.`ChallengeSubmission`.`challengeId`, `main`.`ChallengeSubmission`.`umkmId`, `main`.`ChallengeSubmission`.`status`, `main`.`ChallengeSubmission`.`content`, `main`.`ChallengeSubmission`.`feedback`, `main`.`ChallengeSubmission`.`mentorId`, `main`.`ChallengeSubmission`.`updatedAt`, `main`.`ChallengeSubmission`.`createdAt` FROM `main`.`ChallengeSubmission` WHERE (`main`.`ChallengeSubmission`.`umkmId` = ? AND `main`.`ChallengeSubmission`.`challengeId` IN (?,?,?,?,?)) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Umkm`.`id`, `main`.`Umkm`.`ownerId`, `main`.`Umkm`.`name`, `main`.`Umkm`.`category`, `main`.`Umkm`.`description`, `main`.`Umkm`.`story`, `main`.`Umkm`.`logo`, `main`.`Umkm`.`village`, `main`.`Umkm`.`district`, `main`.`Umkm`.`regency`, `main`.`Umkm`.`digitization`, `main`.`Umkm`.`joinedAt` FROM `main`.`Umkm` WHERE `main`.`Umkm`.`id` IN (?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Module`.`id`, `main`.`Module`.`order`, `main`.`Module`.`title`, `main`.`Module`.`subtitle`, `main`.`Module`.`description`, `main`.`Module`.`icon`, `main`.`Module`.`duration`, `main`.`Module`.`level`, `main`.`Module`.`createdAt` FROM `main`.`Module` WHERE `main`.`Module`.`id` IN (?,?,?) LIMIT ? OFFSET ?
+ GET /api/challenges?umkmId=cmrlkowdz0005dd52cim0iguw 200 in 17ms (next.js: 7ms, application-code: 10ms)
+prisma:query SELECT `main`.`Prompt`.`id`, `main`.`Prompt`.`title`, `main`.`Prompt`.`category`, `main`.`Prompt`.`purpose`, `main`.`Prompt`.`body`, `main`.`Prompt`.`tips`, `main`.`Prompt`.`difficulty`, `main`.`Prompt`.`createdAt` FROM `main`.`Prompt` WHERE 1=1 ORDER BY `main`.`Prompt`.`createdAt` ASC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`FavoritePrompt`.`id`, `main`.`FavoritePrompt`.`userId`, `main`.`FavoritePrompt`.`promptId`, `main`.`FavoritePrompt`.`createdAt` FROM `main`.`FavoritePrompt` WHERE (`main`.`FavoritePrompt`.`userId` = ? AND `main`.`FavoritePrompt`.`promptId` IN (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)) LIMIT ? OFFSET ?
+ GET /api/prompts?userId=cmrlkowdy0002dd52syelpfih&fav=1 200 in 15ms (next.js: 9ms, application-code: 5ms)

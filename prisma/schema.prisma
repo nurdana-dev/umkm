@@ -1,0 +1,162 @@
+// Prisma schema for UMKM Naik Kelas Bersama AI
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  role      String   @default("peserta") // peserta | mentor | admin
+  avatar    String?
+  createdAt DateTime @default(now())
+  umkm      Umkm?
+}
+
+model Umkm {
+  id            String   @id @default(cuid())
+  ownerId       String   @unique
+  owner         User     @relation(fields: [ownerId], references: [id])
+  name          String
+  category      String // kuliner | fashion | kerajinan | pertanian | jasa
+  description   String
+  story         String?
+  logo          String?
+  village       String   @default("Desa Bringin")
+  district      String   @default("Kec. Srumbung")
+  regency       String   @default("Kab. Magelang")
+  digitization  Int      @default(0) // 0-100 progress
+  joinedAt      DateTime @default(now())
+  progress      Progress[]
+  submissions   ChallengeSubmission[]
+  showcase      Showcase?
+}
+
+model Module {
+  id          String    @id @default(cuid())
+  order       Int       @unique
+  title       String
+  subtitle    String
+  description String
+  icon        String
+  duration    String
+  level       String    @default("Pemula")
+  lessons     Lesson[]
+  challenges  Challenge[]
+  createdAt   DateTime  @default(now())
+}
+
+model Lesson {
+  id          String   @id @default(cuid())
+  moduleId    String
+  module      Module   @relation(fields: [moduleId], references: [id])
+  order       Int
+  title       String
+  type        String   @default("materi") // materi | video | kasus | latihan
+  content     String
+  duration    String
+  progress    Progress[]
+}
+
+model Progress {
+  id         String   @id @default(cuid())
+  umkmId     String
+  lessonId   String
+  completed  Boolean  @default(false)
+  completedAt DateTime?
+  umkm       Umkm     @relation(fields: [umkmId], references: [id])
+  lesson     Lesson   @relation(fields: [lessonId], references: [id])
+  createdAt  DateTime @default(now())
+
+  @@unique([umkmId, lessonId])
+}
+
+model Prompt {
+  id         String   @id @default(cuid())
+  title      String
+  category   String // kuliner | fashion | kerajinan | pertanian | jasa
+  purpose    String // caption | deskripsi | ide | branding | strategi
+  body       String
+  tips       String?
+  difficulty String   @default("Mudah")
+  favorites  FavoritePrompt[]
+  createdAt  DateTime @default(now())
+}
+
+model FavoritePrompt {
+  id        String   @id @default(cuid())
+  userId    String
+  promptId  String
+  prompt    Prompt   @relation(fields: [promptId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@unique([userId, promptId])
+}
+
+model Template {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String
+  icon        String
+  fields      String // JSON array of field definitions
+  preview     String   // JSON preview content
+  usageCount  Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Challenge {
+  id          String   @id @default(cuid())
+  week        Int      @unique
+  title       String
+  description String
+  instructions String
+  moduleId    String?
+  module      Module?  @relation(fields: [moduleId], references: [id])
+  deadline    String
+  submissions ChallengeSubmission[]
+  createdAt   DateTime @default(now())
+}
+
+model ChallengeSubmission {
+  id          String   @id @default(cuid())
+  challengeId String
+  umkmId      String
+  status      String   @default("belum") // belum | proses | selesai
+  content     String?
+  feedback    String?
+  mentorId    String?
+  updatedAt   DateTime @updatedAt
+  challenge   Challenge @relation(fields: [challengeId], references: [id])
+  umkm        Umkm     @relation(fields: [umkmId], references: [id])
+  createdAt   DateTime @default(now())
+
+  @@unique([challengeId, umkmId])
+}
+
+model Showcase {
+  id          String   @id @default(cuid())
+  umkmId      String   @unique
+  umkm        Umkm     @relation(fields: [umkmId], references: [id])
+  headline    String
+  beforeStory String
+  afterStory  String
+  achievements String  @default("[]") // JSON array
+  image       String?
+  publishedAt DateTime @default(now())
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String
+  message   String
+  type      String   @default("info") // info | success | challenge | feedback
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
